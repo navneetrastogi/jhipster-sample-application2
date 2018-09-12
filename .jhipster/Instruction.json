@@ -1,0 +1,35 @@
+{
+    "name": "Instruction",
+    "fields": [
+        {
+            "fieldName": "scheduleItemId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "videoURL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photoURLs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instruction",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180912082330",
+    "entityTableName": "instruction",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "ScheduleItem",
+    "fields": [
+        {
+            "fieldName": "isDone",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "itemType",
+            "fieldType": "ScheduleItemType",
+            "fieldValues": "EVENT,ACTIVITY"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scheduledDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endtTime",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180912082329",
+    "entityTableName": "schedule_item",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
