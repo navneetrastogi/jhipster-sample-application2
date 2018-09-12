@@ -1,0 +1,31 @@
+{
+    "name": "Attendance",
+    "fields": [
+        {
+            "fieldName": "checkin",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "checkout",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "datetime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20180912082332",
+    "entityTableName": "attendance",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
