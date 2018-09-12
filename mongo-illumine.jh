@@ -1,0 +1,321 @@
+entity Organization {
+	id Long,
+    name String,
+    createdOn LocalDate,
+    lastModifiedOn LocalDate    
+}
+
+entity Center {
+	id Long,
+    name String,
+    createdOn LocalDate,
+    lastModifiedOn LocalDate
+}
+
+entity Room {
+	id Long,
+    name String,
+    capacity Long
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+}
+
+entity Teacher {
+  id Long,
+  name String,
+  contactNumber String,
+  gender Gender
+  address String
+  createdOn LocalDate
+  joiningDate LocalDate
+}
+
+entity Task{
+    id Long
+    title String
+    notes String
+    startDate LocalDate
+    endDate LocalDate
+    reminderType ReminderType
+}
+enum ReminderType {
+	HOURLY,DAILY,WEEKLY,MONTHLY
+}
+entity TaskType{
+    id Long
+    name String
+    priority Integer
+}
+
+entity Student{
+    id Long,
+    name String,
+    createdOn LocalDate,
+    lastModifiedOn LocalDate,
+	profileImageURL String
+	
+}
+
+entity StudentProfile{
+  id Long,
+  dream String,
+  birthDate LocalDate,
+  bloodGroup String,
+  gender Gender,  
+ allergies String
+}
+
+enum Gender {
+  MALE,FEMALE
+}
+
+entity Schedule {
+	id Long,
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+}
+
+entity ScheduleItem {
+id Long,
+isDone Boolean
+itemType ScheduleItem	
+title String
+description String,
+scheduledDate LocalDate,	
+startTime   LocalDate,	
+endtTime   LocalDate
+}
+
+enum ScheduleItemType {
+EVENT,ACTIVITY
+}
+
+entity Instruction {
+id Long,
+ScheduleItemId Long,
+videoURL String,
+photoURLs String
+instruction String
+title String
+}
+
+entity Notification{
+	id Long
+	type String
+    date LocalDate
+    createdOn LocalDate
+    message String
+    icon String
+    status NotificationStatus
+}
+enum NotificationStatus{
+	PENDING,DELIVERED,READ
+}
+
+
+
+entity Attendance{
+id Long
+Checkin LocalDate
+Checkout LocalDate
+ datetime LocalDate    
+createdOn LocalDate    
+}
+
+entity Incident{
+    id Long
+    natureOfIncident String
+    firstAidProvided Boolean
+    firstAidNotes String
+    date LocalDate
+    createdOn LocalDate
+    isAdminOnly Boolean
+    notes String
+	Role String
+}
+
+entity IncidentRecord{
+	id Long
+    natureOfIncident String
+    firstAidProvided Boolean
+    firstAidNotes String
+    date LocalDate
+    createdOn LocalDate
+    isAdminOnly Boolean
+    notes String
+	students String
+}
+
+entity Event {
+	id Long,
+	title String,
+	description String
+    eventImageURL String
+    eventDate LocalDate
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+}
+
+entity EventPhotos {
+eventid Long
+imageUrls String
+likes String[
+seen String
+}
+
+entity ImmunizationRecord{
+	id Long
+	ImmunizationitemId Long
+    createdOn LocalDate
+    vaccinationDoneOn LocalDate
+    vaccinationName String
+    isOnTime Boolean
+   imageUrl String
+}
+
+entity ImmunizationPlan {
+immunizationItems String
+
+}
+entity ImmunizationItems{
+id Long
+title String
+description String
+startAge Integer
+endAge Integer
+}
+
+
+entity IllnessRecord{
+	id Long
+    createdOn LocalDate
+    name String
+    description String
+    isCured Boolean,
+}
+
+entity Kudos{
+    id Long,
+	title String,
+	description String,
+    imageUrl String
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+
+}
+entity KudosRecord{
+	id Long
+    createdOn LocalDate
+    notes String
+
+}
+
+entity Milestone{
+    id Long,
+	title String,
+	description String,
+    imageUrl String
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+}
+entity MilestoneRecord{
+	id Long
+    createdOn LocalDate
+    notes String
+}
+
+entity Holiday {
+    id Long,
+    date LocalDate,
+    title String,
+    description String
+}
+
+
+
+entity  Timeline {
+	id Long
+    date LocalDate,
+    isVisible LocalDate
+activities Activity
+}
+
+
+entity Activity {
+	id Long,
+	title String,
+	description String,
+    activityImageUrl String
+    activityDate LocalDate
+    createdOn LocalDate
+    lastModifiedOn LocalDate
+studentIds String
+}
+
+entity ActivityType {
+    id Long,
+    name String,
+    category String
+}
+
+
+
+
+entity Media{
+	id Long,
+    mediaType IllumineMediaType
+    createdOn LocalDate
+    fileUrl String
+    title String
+}
+
+enum IllumineMediaType{
+	PHOTO,VIDEO
+}
+
+
+entity Conversation{
+    id Long
+    text String
+    createdOn LocalDate
+    sentOn LocalDate
+    status String
+    fileUrl String
+    mediaType IllumineMediaType
+}
+
+
+
+
+entity Payment{
+id Long
+}
+
+enum Relation{
+	FATHER, MOTHER, GUARDIAN
+}
+entity Parent{
+	id Long,
+    name String,
+    createdOn LocalDate,
+    phoneNumber String,
+    relation Relation,
+    studentName String,
+    isAccountActive Boolean,
+    email String    
+}
+
+entity Permission{
+	id Long
+    name String
+}
+entity Feature{
+	id Long
+    name String
+    featureType FeatureType
+}
+enum FeatureType{
+	STANDARD,PREMIUM
+}
+
+//Schedule will be union of ScheduleItem, Activities & events
